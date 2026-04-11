@@ -1,0 +1,19 @@
+---
+const currentYear = new Date().getFullYear();
+---
+
+<footer class="footer">
+  <div class="container">
+    <p>&copy; {currentYear} Kanata Labs LLC. All rights reserved.</p>
+  </div>
+</footer>
+
+<style>
+  .footer {
+    padding: var(--spacing-md) 0;
+    background-color: var(--color-dark-gray);
+    color: var(--color-light-gray);
+    text-align: center;
+    font-size: 0.875rem;
+  }
+</style>

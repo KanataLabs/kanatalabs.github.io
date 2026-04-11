@@ -1,0 +1,89 @@
+---
+const services = [
+  {
+    title: 'Research & Development',
+    description: "Exploring emerging technologies and developing innovative solutions for tomorrow's challenges.",
+  },
+  {
+    title: 'Technical Consulting',
+    description: 'Providing expert guidance on architecture, implementation, and technology strategy.',
+  },
+  {
+    title: 'Innovation Labs',
+    description: 'Building and incubating new ideas from concept to prototype to production.',
+  },
+];
+---
+
+<section id="services" class="services">
+  <div class="container">
+    <h2 class="section-title">Our Focus</h2>
+    <div class="services-grid">
+      {services.map(service => (
+        <div class="service-card">
+          <h3>{service.title}</h3>
+          <p>{service.description}</p>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>
+
+<style>
+  .services {
+    padding: var(--spacing-xl) 0;
+    background-color: var(--color-white);
+  }
+
+  .section-title {
+    text-align: center;
+    margin-bottom: var(--spacing-lg);
+    position: relative;
+  }
+
+  .section-title::after {
+    content: '';
+    display: block;
+    width: 60px;
+    height: 3px;
+    background-color: var(--color-black);
+    margin: var(--spacing-sm) auto 0;
+  }
+
+  .services-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: var(--spacing-md);
+  }
+
+  .service-card {
+    padding: var(--spacing-lg) var(--spacing-md);
+    border: 1px solid var(--color-lighter-gray);
+    text-align: center;
+    transition: var(--transition);
+  }
+
+  .service-card:hover {
+    border-color: var(--color-black);
+    transform: translateY(-4px);
+  }
+
+  .service-card h3 {
+    margin-bottom: var(--spacing-sm);
+    color: var(--color-black);
+  }
+
+  .service-card p {
+    margin-bottom: 0;
+  }
+
+  @media (max-width: 768px) {
+    .services-grid {
+      grid-template-columns: 1fr;
+    }
+
+    .service-card {
+      padding: var(--spacing-md);
+    }
+  }
+</style>
