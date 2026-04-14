@@ -18,11 +18,30 @@ import Footer from '../components/Footer.astro';
       <div class="container">
         <div class="contact-info">
           <h2>Kanata Labs LLC</h2>
-          <p class="intro">We are open to discussing potential collaborations and inquiries.</p>
+          <p class="intro">We welcome inquiries about potential collaborations and projects.</p>
           
-          <div class="contact-box">
-            <p>Please reach out through professional networks or referral contacts.</p>
-            <p class="note">Response time: 2-3 business days</p>
+          <div class="contact-methods">
+            <div class="method-card">
+              <h3>Professional Inquiries</h3>
+              <p>For business collaborations and project discussions, please submit an inquiry through our social channels or contact form below.</p>
+            </div>
+            
+            <div class="method-card">
+              <h3>Contact Form</h3>
+              <form class="contact-form" action="mailto:contact@kanatalabs.com" method="GET" enctype="text/plain">
+                <div class="form-group">
+                  <label for="subject">Subject</label>
+                  <input type="text" id="subject" name="subject" placeholder="Business Inquiry" required />
+                </div>
+                
+                <div class="form-group">
+                  <label for="message">Message</label>
+                  <textarea id="message" name="body" rows="5" placeholder="Your message..." required></textarea>
+                </div>
+                
+                <button type="submit" class="btn btn-primary">Send Email</button>
+              </form>
+            </div>
           </div>
         </div>
       </div>
@@ -53,32 +72,101 @@ import Footer from '../components/Footer.astro';
   }
 
   .contact-info {
-    max-width: 600px;
+    max-width: 800px;
     margin: 0 auto;
-    text-align: center;
   }
 
   .contact-info h2 {
+    text-align: center;
     margin-bottom: var(--spacing-sm);
   }
 
   .intro {
+    text-align: center;
     color: var(--color-gray);
     margin-bottom: var(--spacing-lg);
   }
 
-  .contact-box {
+  .contact-methods {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: var(--spacing-md);
+  }
+
+  .method-card {
     padding: var(--spacing-lg);
     border: 1px solid var(--color-lighter-gray);
+    text-align: center;
   }
 
-  .contact-box p {
+  .method-card h3 {
     margin-bottom: var(--spacing-sm);
+    font-size: 1.1rem;
   }
 
-  .note {
-    color: var(--color-light-gray);
+  .method-card > p {
+    color: var(--color-gray);
+    font-size: 0.95rem;
+    margin-bottom: var(--spacing-md);
+  }
+
+  .contact-form {
+    text-align: left;
+  }
+
+  .form-group {
+    margin-bottom: var(--spacing-md);
+  }
+
+  .form-group label {
+    display: block;
+    margin-bottom: var(--spacing-xs);
+    font-weight: 500;
+    color: var(--color-black);
     font-size: 0.9rem;
-    margin-bottom: 0;
+  }
+
+  .form-group input,
+  .form-group textarea {
+    width: 100%;
+    padding: 0.75rem;
+    border: 1px solid var(--color-lighter-gray);
+    font-family: var(--font-primary);
+    font-size: 1rem;
+    transition: var(--transition);
+  }
+
+  .form-group input:focus,
+  .form-group textarea:focus {
+    outline: none;
+    border-color: var(--color-black);
+  }
+
+  .btn {
+    display: inline-block;
+    padding: 0.875rem 1.75rem;
+    font-size: 0.85rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    border: 2px solid var(--color-black);
+    transition: var(--transition);
+    cursor: pointer;
+  }
+
+  .btn-primary {
+    background-color: var(--color-black);
+    color: var(--color-white);
+  }
+
+  .btn-primary:hover {
+    background-color: transparent;
+    color: var(--color-black);
+  }
+
+  @media (max-width: 768px) {
+    .contact-methods {
+      grid-template-columns: 1fr;
+    }
   }
 </style>
