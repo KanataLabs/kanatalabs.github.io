@@ -1,4 +1,8 @@
 ---
+import Layout from '../layouts/Layout.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+
 const services = [
   {
     title: 'Research & Development',
@@ -15,45 +19,59 @@ const services = [
 ];
 ---
 
-<section id="services" class="services">
-  <div class="container">
-    <h2 class="section-title">Our Focus</h2>
-    <div class="services-grid">
-      {services.map(service => (
-        <div class="service-card">
-          <h3>{service.title}</h3>
-          <p>{service.description}</p>
+<Layout title="Services | Kanata Labs LLC">
+  <Header />
+  <main>
+    <section class="page-hero">
+      <div class="container">
+        <h1>Services</h1>
+        <p class="subtitle">What We Work On</p>
+      </div>
+    </section>
+    
+    <section class="services-content">
+      <div class="container">
+        <div class="services-grid">
+          {services.map(service => (
+            <div class="service-card">
+              <h3>{service.title}</h3>
+              <p>{service.description}</p>
+            </div>
+          ))}
         </div>
-      ))}
-    </div>
-  </div>
-</section>
+      </div>
+    </section>
+  </main>
+  <Footer />
+</Layout>
 
 <style>
-  .services {
-    padding: var(--spacing-xl) 0;
-    background-color: var(--color-white);
-  }
-
-  .section-title {
+  .page-hero {
+    padding: 120px 0 60px;
+    background-color: var(--color-off-white);
     text-align: center;
-    margin-bottom: var(--spacing-lg);
-    position: relative;
   }
 
-  .section-title::after {
-    content: '';
-    display: block;
-    width: 60px;
-    height: 3px;
-    background-color: var(--color-black);
-    margin: var(--spacing-sm) auto 0;
+  .page-hero h1 {
+    font-size: clamp(2rem, 4vw, 3rem);
+    margin-bottom: var(--spacing-xs);
+  }
+
+  .subtitle {
+    color: var(--color-gray);
+    font-size: 1.1rem;
+  }
+
+  .services-content {
+    padding: var(--spacing-xl) 0;
   }
 
   .services-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     gap: var(--spacing-md);
+    max-width: 1000px;
+    margin: 0 auto;
   }
 
   .service-card {
@@ -65,7 +83,6 @@ const services = [
 
   .service-card:hover {
     border-color: var(--color-black);
-    transform: translateY(-4px);
   }
 
   .service-card h3 {
@@ -75,6 +92,7 @@ const services = [
 
   .service-card p {
     margin-bottom: 0;
+    color: var(--color-gray);
   }
 
   @media (max-width: 768px) {

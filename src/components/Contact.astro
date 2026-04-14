@@ -4,10 +4,11 @@
 <section id="contact" class="contact">
   <div class="container">
     <h2 class="section-title">Contact</h2>
-    <p class="contact-intro">Ready to collaborate? We'd love to hear from you.</p>
+    <p class="contact-intro">Open to discussing potential collaborations.</p>
     <div class="contact-info">
       <p><strong>Kanata Labs LLC</strong></p>
-      <p>Email: <a href="mailto:contact@kanatalabs.com">contact@kanatalabs.com</a></p>
+      <p>Please use the contact page to send inquiries.</p>
+      <a href="/contact" class="btn">Go to Contact Page</a>
     </div>
   </div>
 </section>
@@ -56,6 +57,27 @@
   }
 
   .contact-info a:hover {
+    border-bottom-color: var(--color-white);
+  }
+
+  .btn {
+    display: inline-block;
+    padding: 0.875rem 1.75rem;
+    margin-top: var(--spacing-sm);
+    font-size: 0.85rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    border: 2px solid var(--color-white);
+    background-color: transparent;
+    color: var(--color-white);
+    text-decoration: none;
+    transition: var(--transition);
+  }
+
+  .btn:hover {
+    background-color: var(--color-white);
+    color: var(--color-black);
     border-bottom-color: var(--color-white);
   }
 </style>

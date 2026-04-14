@@ -1,0 +1,84 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+---
+
+<Layout title="About | Kanata Labs LLC">
+  <Header />
+  <main>
+    <section class="page-hero">
+      <div class="container">
+        <h1>About Us</h1>
+        <p class="subtitle">Kanata Labs LLC</p>
+      </div>
+    </section>
+    
+    <section class="about-content">
+      <div class="container">
+        <div class="content-block">
+          <h2>Company Overview</h2>
+          <p>
+            Kanata Labs LLC is a registered Wyoming Limited Liability Company. 
+            We focus on technology research and development work across various domains.
+          </p>
+          <p>
+            Our team consists of professionals with backgrounds in software development, 
+            system architecture, and technical research.
+          </p>
+        </div>
+        
+        <div class="content-block">
+          <h2>Our Approach</h2>
+          <p>
+            We approach each project with careful planning and attention to detail. 
+            Our process involves understanding requirements, designing appropriate solutions, 
+            and implementing with quality in mind.
+          </p>
+        </div>
+      </div>
+    </section>
+  </main>
+  <Footer />
+</Layout>
+
+<style>
+  .page-hero {
+    padding: 120px 0 60px;
+    background-color: var(--color-off-white);
+    text-align: center;
+  }
+
+  .page-hero h1 {
+    font-size: clamp(2rem, 4vw, 3rem);
+    margin-bottom: var(--spacing-xs);
+  }
+
+  .subtitle {
+    color: var(--color-gray);
+    font-size: 1.1rem;
+  }
+
+  .about-content {
+    padding: var(--spacing-xl) 0;
+  }
+
+  .content-block {
+    max-width: 800px;
+    margin: 0 auto var(--spacing-lg);
+  }
+
+  .content-block:last-child {
+    margin-bottom: 0;
+  }
+
+  .content-block h2 {
+    margin-bottom: var(--spacing-md);
+    color: var(--color-black);
+  }
+
+  .content-block p {
+    margin-bottom: var(--spacing-sm);
+    line-height: 1.7;
+  }
+</style>
