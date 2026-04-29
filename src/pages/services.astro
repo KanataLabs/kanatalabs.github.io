@@ -7,56 +7,38 @@ const services = [
   {
     title: 'Game Development',
     description:
-      'Browser and mobile games we make and keep running ourselves.',
-    points: [
-      'HTML5 / WebGL browser games',
-      'Mobile games for iOS and Android',
-      'Gameplay, art, and systems design',
-      'Backend, accounts, and platform / store SDK integration',
-    ],
+      'Browser and mobile games we make ourselves.',
   },
   {
-    title: 'Game Operations & Publishing',
+    title: 'Game Operations',
     description:
-      'Live ops for the games we publish — content, monetization, analytics, players.',
-    points: [
-      'Content updates and seasonal events',
-      'Monetization design and balancing',
-      'Analytics, A/B testing, and reporting',
-      'Player support and community',
-    ],
+      'Ongoing work on live games: updates, balance, analytics, players.',
   },
   {
     title: 'Software Development',
     description:
-      'Web and mobile software we build for ourselves, including standalone products.',
-    points: [
-      'Web and full-stack apps',
-      'Mobile apps for iOS and Android',
-      'Backend services and APIs',
-      'Internal tooling and automation',
-    ],
+      'Software projects and tools of our own.',
   },
 ];
 ---
 
 <Layout
   title="Services | Kanata Labs LLC"
-  description="Games and software from Kanata Labs — browser and mobile games we make and run ourselves, plus software products and tools of our own."
+  description="Games and software from Kanata Labs — the areas we spend our time building and running ourselves."
 >
   <Header />
   <main>
     <section class="page-hero">
       <div class="container">
-        <h1>Services</h1>
-        <p class="subtitle">What we do</p>
+        <h1>What we work on</h1>
+        <p class="subtitle">A quick overview</p>
       </div>
     </section>
 
     <section class="services-content">
       <div class="container">
         <p class="services-intro">
-          Games and software we build and run ourselves.
+          These are the areas we spend our time on and know well.
         </p>
 
         <div class="services-grid">
@@ -64,11 +46,6 @@ const services = [
             <article class="service-card">
               <h3>{service.title}</h3>
               <p class="service-desc">{service.description}</p>
-              <ul class="service-points">
-                {service.points.map(point => (
-                  <li>{point}</li>
-                ))}
-              </ul>
             </article>
           ))}
         </div>
@@ -135,26 +112,6 @@ const services = [
     margin-bottom: var(--spacing-sm);
     color: var(--color-gray);
     line-height: 1.6;
-  }
-
-  .service-points {
-    list-style: none;
-    padding: 0;
-  }
-
-  .service-points li {
-    position: relative;
-    padding-left: 1.25rem;
-    margin-bottom: 0.4rem;
-    color: var(--color-gray);
-    font-size: 0.95rem;
-  }
-
-  .service-points li::before {
-    content: '—';
-    position: absolute;
-    left: 0;
-    color: var(--color-light-gray);
   }
 
   @media (max-width: 768px) {
