@@ -31,6 +31,12 @@ import Footer from '../components/Footer.astro';
             liability company registered in the State of Wyoming, United
             States.
           </p>
+          <address class="company-address">
+            Kanata Labs LLC<br />
+            30 N Gould St Ste R<br />
+            Sheridan, WY 82801<br />
+            United States
+          </address>
         </div>
 
         <div class="content-block">
@@ -114,6 +120,16 @@ import Footer from '../components/Footer.astro';
   .content-block p {
     margin-bottom: var(--spacing-sm);
     line-height: 1.7;
+  }
+
+  .company-address {
+    font-style: normal;
+    font-size: 0.95rem;
+    line-height: 1.6;
+    color: var(--color-gray);
+    padding: var(--spacing-sm) var(--spacing-md);
+    border-left: 2px solid var(--color-lighter-gray);
+    margin-top: var(--spacing-sm);
   }
 
   .cta-block {

@@ -11,6 +11,12 @@ const currentYear = new Date().getFullYear();
           Software & games studio. Custom software development and
           original browser and mobile games.
         </p>
+        <address class="footer-address">
+          Kanata Labs LLC<br />
+          30 N Gould St Ste R<br />
+          Sheridan, WY 82801<br />
+          United States
+        </address>
       </div>
 
       <div class="footer-col">
@@ -39,6 +45,15 @@ const currentYear = new Date().getFullYear();
             <span class="obf">
               contact <span aria-hidden="true">[at]</span><span class="sr-only">@</span> kanatalabs.com
             </span>
+          </li>
+          <li>
+            <button
+              type="button"
+              class="footer-link-btn"
+              onclick="window.openCookiePreferences && window.openCookiePreferences()"
+            >
+              Cookie preferences
+            </button>
           </li>
         </ul>
       </div>
@@ -77,8 +92,31 @@ const currentYear = new Date().getFullYear();
     color: var(--color-light-gray);
     font-size: 0.9rem;
     line-height: 1.6;
-    margin: 0;
+    margin: 0 0 var(--spacing-sm);
     max-width: 320px;
+  }
+
+  .footer-address {
+    font-style: normal;
+    font-size: 0.8rem;
+    color: var(--color-light-gray);
+    line-height: 1.6;
+  }
+
+  .footer-link-btn {
+    background: none;
+    border: none;
+    padding: 0;
+    margin: 0;
+    font: inherit;
+    color: var(--color-light-gray);
+    cursor: pointer;
+    text-align: left;
+    transition: var(--transition);
+  }
+
+  .footer-link-btn:hover {
+    color: var(--color-white);
   }
 
   .footer-col h4 {

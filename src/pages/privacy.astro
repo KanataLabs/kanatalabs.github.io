@@ -69,20 +69,31 @@ const lastUpdated = 'April 28, 2026';
 
           <h2>3. Cookies and analytics</h2>
           <p>
-            This site uses Google Analytics 4, a service provided by
-            Google LLC, to measure traffic and usage. Google Analytics
-            uses cookies and similar technologies to collect the
-            automatic information described above. You can learn more
-            about how Google uses data when you use partner sites at
-            <a href="https://policies.google.com/technologies/partner-sites" rel="noopener noreferrer">policies.google.com/technologies/partner-sites</a>,
-            and you can opt out of Google Analytics by installing the
-            Google Analytics Opt-out Browser Add-on at
+            This site uses Google Analytics 4 (provided by Google LLC)
+            to measure traffic and usage. Google Analytics uses
+            cookies and similar technologies to collect the automatic
+            information described above.
+          </p>
+          <p>
+            We implement Google Consent Mode v2. Until you make a
+            choice in our cookie banner, all analytics, advertising,
+            and personalization storage is set to <em>denied</em>, and
+            no analytics cookies are stored. You can change your
+            choice at any time using the &ldquo;Cookie preferences&rdquo;
+            link in the footer of this site.
+          </p>
+          <p>
+            For more on how Google uses data when you use partner
+            sites, see
+            <a href="https://policies.google.com/technologies/partner-sites" rel="noopener noreferrer">policies.google.com/technologies/partner-sites</a>.
+            You can also install the Google Analytics Opt-out Browser
+            Add-on at
             <a href="https://tools.google.com/dlpage/gaoptout" rel="noopener noreferrer">tools.google.com/dlpage/gaoptout</a>.
           </p>
           <p>
-            Most browsers allow you to refuse cookies or delete cookies
-            that have already been set. Doing so should not prevent
-            you from using this site.
+            Most browsers allow you to refuse cookies or delete
+            cookies that have already been set. Doing so should not
+            prevent you from using this site.
           </p>
 
           <h2>4. How we share information</h2>
@@ -183,8 +194,15 @@ const lastUpdated = 'April 28, 2026';
             of personal information, please use our
             <a href="/contact">contact form</a>. If you cannot use
             the form, you may instead write to
-            <span class="obf">contact <span aria-hidden="true">[at]</span><span class="sr-only">@</span> kanatalabs.com</span>.
+            <span class="obf">contact <span aria-hidden="true">[at]</span><span class="sr-only">@</span> kanatalabs.com</span>,
+            or by post:
           </p>
+          <address class="legal-address">
+            Kanata Labs LLC<br />
+            30 N Gould St Ste R<br />
+            Sheridan, WY 82801<br />
+            United States
+          </address>
         </article>
       </div>
     </section>
@@ -259,6 +277,16 @@ const lastUpdated = 'April 28, 2026';
     font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
     font-size: 0.95em;
     white-space: nowrap;
+  }
+
+  .legal-address {
+    font-style: normal;
+    font-size: 0.95rem;
+    line-height: 1.6;
+    color: var(--color-gray);
+    padding: var(--spacing-sm) var(--spacing-md);
+    border-left: 2px solid var(--color-lighter-gray);
+    margin: var(--spacing-sm) 0 var(--spacing-md);
   }
 
   .sr-only {
