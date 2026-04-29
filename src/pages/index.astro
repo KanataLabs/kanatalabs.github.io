@@ -6,11 +6,6 @@ import Footer from '../components/Footer.astro';
 
 const capabilities = [
   {
-    title: 'Software Development',
-    description:
-      'Web, mobile, and backend builds for client companies.',
-  },
-  {
     title: 'Game Development',
     description:
       'Original browser and mobile games we design, build, and ship ourselves.',
@@ -21,9 +16,14 @@ const capabilities = [
       'Live ops for the games we publish: content updates, monetization, analytics, player support.',
   },
   {
+    title: 'Software Development',
+    description:
+      'Web, mobile, and backend development.',
+  },
+  {
     title: 'Technical Consulting',
     description:
-      'Short engagements — architecture review, tech selection, project scoping.',
+      'Occasional short engagements — architecture review, tech selection, project scoping.',
   },
 ];
 ---
@@ -37,9 +37,8 @@ const capabilities = [
       <div class="container">
         <h2 class="section-title">What we do</h2>
         <p class="section-lead">
-          Two things we are paid for: software work for client
-          companies, and the games we run ourselves. A bit of
-          consulting on the side.
+          We make and run our own browser and mobile games.
+          We also do software development and occasional consulting.
         </p>
         <div class="cap-grid">
           {capabilities.map(cap => (
@@ -62,10 +61,10 @@ const capabilities = [
             <h2>An independent studio</h2>
             <p>
               Small team. The senior people are the ones doing the
-              work. The software side is paid client work; the games
-              side is what we develop and run ourselves. We pick a few
-              things to work on rather than a queue of many, and we
-              tend to stay with what we ship.
+              work. Our main focus is the games we build and run
+              ourselves — browser and mobile. We also do software
+              development and consulting. We pick a few things to work on
+              at a time rather than a queue of many.
             </p>
             <a href="/about" class="link-arrow">More about us &rarr;</a>
           </div>
@@ -89,12 +88,12 @@ const capabilities = [
 
     <section class="contact-cta">
       <div class="container">
-        <h2>Have a project in mind?</h2>
+        <h2>Get in touch</h2>
         <p>
-          Tell us about your software project, your game, or the live
-          title you would like help running.
+          About our games, potential partnerships, or any other
+          inquiry — use the form below.
         </p>
-        <a href="/contact" class="btn btn-primary">Get in touch</a>
+        <a href="/contact" class="btn btn-primary">Contact us</a>
       </div>
     </section>
   </main>

@@ -5,17 +5,6 @@ import Footer from '../components/Footer.astro';
 
 const services = [
   {
-    title: 'Software Development',
-    description:
-      'Web apps, mobile apps, backends, and internal tools we build for client companies, usually under a written agreement.',
-    points: [
-      'Web and full-stack apps',
-      'Mobile apps for iOS and Android',
-      'Backend services and APIs',
-      'Internal tooling and automation',
-    ],
-  },
-  {
     title: 'Game Development',
     description:
       'Original browser and mobile games we design, build, and ship ourselves.',
@@ -38,9 +27,20 @@ const services = [
     ],
   },
   {
+    title: 'Software Development',
+    description:
+      'Web apps, mobile apps, backends, and internal tools.',
+    points: [
+      'Web and full-stack apps',
+      'Mobile apps for iOS and Android',
+      'Backend services and APIs',
+      'Internal tooling and automation',
+    ],
+  },
+  {
     title: 'Technical Consulting',
     description:
-      'Short engagements where we look at your architecture, scope, or tech choices and write up what we would do.',
+      'Occasional short engagements where we look at your architecture, scope, or tech choices.',
     points: [
       'Architecture and code review',
       'Technology selection',
@@ -53,7 +53,7 @@ const services = [
 
 <Layout
   title="Services | Kanata Labs LLC"
-  description="Software development, game development, game operations, and technical consulting from Kanata Labs."
+  description="Game development, game operations, and select software services from Kanata Labs."
 >
   <Header />
   <main>
@@ -67,9 +67,8 @@ const services = [
     <section class="services-content">
       <div class="container">
         <p class="services-intro">
-          We do client software engagements and we run our own games.
-          Consulting is a smaller side of the business. Below are the
-          kinds of work we take on.
+          Our main business is developing and operating our own games.
+          We also do software development and occasional consulting.
         </p>
 
         <div class="services-grid">
@@ -84,23 +83,6 @@ const services = [
               </ul>
             </article>
           ))}
-        </div>
-
-        <div class="engagement-note">
-          <h2>Engagement & pricing</h2>
-          <p>
-            Software and consulting work is usually billed on a
-            fixed-fee or time-and-materials basis under a written
-            agreement. For the games we publish, the revenue comes
-            from in-app purchases, paid downloads, and ads on those
-            titles, collected through the platforms and payment
-            processors we work with — not through this website.
-          </p>
-          <p>
-            We share specific pricing in a written proposal after
-            a short call.
-          </p>
-          <a href="/contact" class="btn">Request a proposal</a>
         </div>
       </div>
     </section>
@@ -185,43 +167,6 @@ const services = [
     position: absolute;
     left: 0;
     color: var(--color-light-gray);
-  }
-
-  .engagement-note {
-    max-width: 800px;
-    margin: var(--spacing-xl) auto 0;
-    padding-top: var(--spacing-lg);
-    border-top: 1px solid var(--color-off-white);
-    text-align: center;
-  }
-
-  .engagement-note h2 {
-    margin-bottom: var(--spacing-md);
-    color: var(--color-black);
-  }
-
-  .engagement-note p {
-    line-height: 1.7;
-    margin-bottom: var(--spacing-sm);
-  }
-
-  .btn {
-    display: inline-block;
-    margin-top: var(--spacing-sm);
-    padding: 0.875rem 1.75rem;
-    font-size: 0.85rem;
-    font-weight: 600;
-    text-transform: uppercase;
-    letter-spacing: 0.05em;
-    border: 2px solid var(--color-black);
-    background-color: var(--color-black);
-    color: var(--color-white);
-    transition: var(--transition);
-  }
-
-  .btn:hover {
-    background-color: transparent;
-    color: var(--color-black);
   }
 
   @media (max-width: 768px) {
