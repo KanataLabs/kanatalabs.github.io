@@ -4,16 +4,163 @@ const currentYear = new Date().getFullYear();
 
 <footer class="footer">
   <div class="container">
-    <p>&copy; {currentYear} Kanata Labs LLC. All rights reserved.</p>
+    <div class="footer-grid">
+      <div class="footer-col">
+        <div class="footer-brand">Kanata Labs</div>
+        <p class="footer-tagline">
+          Software & games studio. Custom software development and
+          original browser and mobile games.
+        </p>
+      </div>
+
+      <div class="footer-col">
+        <h4>Site</h4>
+        <ul>
+          <li><a href="/">Home</a></li>
+          <li><a href="/about">About</a></li>
+          <li><a href="/services">Services</a></li>
+          <li><a href="/contact">Contact</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h4>Legal</h4>
+        <ul>
+          <li><a href="/privacy">Privacy Policy</a></li>
+          <li><a href="/terms">Terms of Use</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h4>Contact</h4>
+        <ul>
+          <li><a href="/contact">Contact form</a></li>
+          <li class="footer-email">
+            <span class="obf">
+              contact <span aria-hidden="true">[at]</span><span class="sr-only">@</span> kanatalabs.com
+            </span>
+          </li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <p>&copy; {currentYear} Kanata Labs LLC. All rights reserved.</p>
+    </div>
   </div>
 </footer>
 
 <style>
   .footer {
-    padding: var(--spacing-md) 0;
+    padding: var(--spacing-lg) 0 var(--spacing-md);
     background-color: var(--color-dark-gray);
     color: var(--color-light-gray);
+    font-size: 0.9rem;
+  }
+
+  .footer-grid {
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr 1.5fr;
+    gap: var(--spacing-lg);
+    margin-bottom: var(--spacing-lg);
+  }
+
+  .footer-brand {
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: var(--color-white);
+    margin-bottom: var(--spacing-sm);
+    letter-spacing: -0.02em;
+  }
+
+  .footer-tagline {
+    color: var(--color-light-gray);
+    font-size: 0.9rem;
+    line-height: 1.6;
+    margin: 0;
+    max-width: 320px;
+  }
+
+  .footer-col h4 {
+    color: var(--color-white);
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    margin-bottom: var(--spacing-sm);
+    font-weight: 600;
+  }
+
+  .footer-col ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+
+  .footer-col li {
+    margin-bottom: 0.5rem;
+  }
+
+  .footer-col a {
+    color: var(--color-light-gray);
+    transition: var(--transition);
+  }
+
+  .footer-col a:hover {
+    color: var(--color-white);
+  }
+
+  .footer-bottom {
+    padding-top: var(--spacing-md);
+    border-top: 1px solid var(--color-medium-gray);
     text-align: center;
-    font-size: 0.875rem;
+    color: var(--color-light-gray);
+    font-size: 0.85rem;
+  }
+
+  .footer-bottom p {
+    margin: 0;
+    color: var(--color-light-gray);
+  }
+
+  .footer-email {
+    color: var(--color-light-gray);
+  }
+
+  .obf {
+    font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+    font-size: 0.85rem;
+  }
+
+  .sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border: 0;
+  }
+
+  @media (max-width: 768px) {
+    .footer-grid {
+      grid-template-columns: 1fr 1fr;
+      gap: var(--spacing-md);
+    }
+
+    .footer-col:first-child {
+      grid-column: 1 / -1;
+    }
+  }
+
+  @media (max-width: 480px) {
+    .footer-grid {
+      grid-template-columns: 1fr;
+    }
+
+    .footer-col:first-child {
+      grid-column: auto;
+    }
   }
 </style>

@@ -4,37 +4,71 @@ import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
 ---
 
-<Layout title="About | Kanata Labs LLC">
+<Layout
+  title="About | Kanata Labs LLC"
+  description="Kanata Labs LLC is an independent software and games studio building custom software and developing and operating browser and mobile games."
+>
   <Header />
   <main>
     <section class="page-hero">
       <div class="container">
-        <h1>About Us</h1>
-        <p class="subtitle">Kanata Labs LLC</p>
+        <h1>About</h1>
+        <p class="subtitle">Who we are and what we do</p>
       </div>
     </section>
-    
+
     <section class="about-content">
       <div class="container">
         <div class="content-block">
-          <h2>Company Overview</h2>
+          <h2>Company</h2>
           <p>
-            Kanata Labs LLC is a registered Wyoming Limited Liability Company. 
-            We focus on technology research and development work across various domains.
+            Kanata Labs is an independent software and games studio. We
+            do two things: we build custom software for client companies,
+            and we develop and run our own browser and mobile games.
           </p>
           <p>
-            Our team consists of professionals with backgrounds in software development, 
-            system architecture, and technical research.
+            The company is organized as Kanata Labs LLC, a limited
+            liability company registered in the State of Wyoming, United
+            States.
           </p>
         </div>
-        
+
         <div class="content-block">
-          <h2>Our Approach</h2>
+          <h2>What we work on</h2>
           <p>
-            We approach each project with careful planning and attention to detail. 
-            Our process involves understanding requirements, designing appropriate solutions, 
-            and implementing with quality in mind.
+            On the software side, we build web apps, mobile apps,
+            backend services, and internal tools for client companies.
           </p>
+          <p>
+            On the games side, we design and build browser games (HTML5
+            / WebGL) and mobile games (iOS and Android). When a game
+            goes live we keep running it ourselves — content updates,
+            monetization tuning, analytics, and player support.
+          </p>
+        </div>
+
+        <div class="content-block">
+          <h2>How we work</h2>
+          <p>
+            Small team. The senior people are the ones doing the work.
+            We pick a few engagements at a time rather than a queue of
+            many, and we tend to stay with what we ship — most of the
+            games we launch we are still running ourselves.
+          </p>
+          <p>
+            A typical engagement starts with a short call, then a
+            written proposal. One-off builds and ongoing work both fit;
+            we will say which fits better when we scope it.
+          </p>
+        </div>
+
+        <div class="content-block cta-block">
+          <h2>Work with us</h2>
+          <p>
+            If you have a software project, a game in mind, or a live
+            title you want help running, we are happy to talk.
+          </p>
+          <a href="/contact" class="btn">Get in touch</a>
         </div>
       </div>
     </section>
@@ -80,5 +114,29 @@ import Footer from '../components/Footer.astro';
   .content-block p {
     margin-bottom: var(--spacing-sm);
     line-height: 1.7;
+  }
+
+  .cta-block {
+    text-align: center;
+    padding-top: var(--spacing-md);
+    border-top: 1px solid var(--color-off-white);
+  }
+
+  .btn {
+    display: inline-block;
+    margin-top: var(--spacing-sm);
+    padding: 0.875rem 1.75rem;
+    font-size: 0.85rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    border: 2px solid var(--color-black);
+    background-color: var(--color-black);
+    color: var(--color-white);
+  }
+
+  .btn:hover {
+    background-color: transparent;
+    color: var(--color-black);
   }
 </style>

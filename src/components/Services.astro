@@ -1,23 +1,31 @@
 ---
 const services = [
   {
-    title: 'Research & Development',
-    description: 'Technical research and experimental development work on software and systems.',
+    title: 'Software Development',
+    description:
+      'Web, mobile, and backend builds for client companies.',
+  },
+  {
+    title: 'Game Development',
+    description:
+      'Original browser and mobile games we design, build, and ship ourselves.',
+  },
+  {
+    title: 'Game Operations',
+    description:
+      'Live ops for the games we publish: content, monetization, analytics, players.',
   },
   {
     title: 'Technical Consulting',
-    description: 'Advice on system architecture, technology selection, and implementation approaches.',
-  },
-  {
-    title: 'Software Development',
-    description: 'Building applications, tools, and systems based on project requirements.',
+    description:
+      'Short engagements — architecture review, tech selection, project scoping.',
   },
 ];
 ---
 
 <section id="services" class="services">
   <div class="container">
-    <h2 class="section-title">Our Focus</h2>
+    <h2 class="section-title">What We Do</h2>
     <div class="services-grid">
       {services.map(service => (
         <div class="service-card">
@@ -52,7 +60,7 @@ const services = [
 
   .services-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
     gap: var(--spacing-md);
   }
 

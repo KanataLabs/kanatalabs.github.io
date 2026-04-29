@@ -5,39 +5,102 @@ import Footer from '../components/Footer.astro';
 
 const services = [
   {
-    title: 'Research & Development',
-    description: 'Technical research and experimental development work on software and systems.',
+    title: 'Software Development',
+    description:
+      'Web apps, mobile apps, backends, and internal tools we build for client companies, usually under a written agreement.',
+    points: [
+      'Web and full-stack apps',
+      'Mobile apps for iOS and Android',
+      'Backend services and APIs',
+      'Internal tooling and automation',
+    ],
+  },
+  {
+    title: 'Game Development',
+    description:
+      'Original browser and mobile games we design, build, and ship ourselves.',
+    points: [
+      'HTML5 / WebGL browser games',
+      'Mobile games for iOS and Android',
+      'Gameplay, art, and systems design',
+      'Backend, accounts, and platform / store SDK integration',
+    ],
+  },
+  {
+    title: 'Game Operations & Publishing',
+    description:
+      'Live ops for the games we publish: keeping content fresh, tuning monetization, watching analytics, answering players.',
+    points: [
+      'Content updates and seasonal events',
+      'Monetization design and balancing',
+      'Analytics, A/B testing, and reporting',
+      'Player support and community',
+    ],
   },
   {
     title: 'Technical Consulting',
-    description: 'Advice on system architecture, technology selection, and implementation approaches.',
-  },
-  {
-    title: 'Software Development',
-    description: 'Building applications, tools, and systems based on project requirements.',
+    description:
+      'Short engagements where we look at your architecture, scope, or tech choices and write up what we would do.',
+    points: [
+      'Architecture and code review',
+      'Technology selection',
+      'Project planning and scoping',
+      'Pre-launch readiness reviews',
+    ],
   },
 ];
 ---
 
-<Layout title="Services | Kanata Labs LLC">
+<Layout
+  title="Services | Kanata Labs LLC"
+  description="Software development, game development, game operations, and technical consulting from Kanata Labs."
+>
   <Header />
   <main>
     <section class="page-hero">
       <div class="container">
         <h1>Services</h1>
-        <p class="subtitle">What We Work On</p>
+        <p class="subtitle">What we do</p>
       </div>
     </section>
-    
+
     <section class="services-content">
       <div class="container">
+        <p class="services-intro">
+          We do client software engagements and we run our own games.
+          Consulting is a smaller side of the business. Below are the
+          kinds of work we take on.
+        </p>
+
         <div class="services-grid">
           {services.map(service => (
-            <div class="service-card">
+            <article class="service-card">
               <h3>{service.title}</h3>
-              <p>{service.description}</p>
-            </div>
+              <p class="service-desc">{service.description}</p>
+              <ul class="service-points">
+                {service.points.map(point => (
+                  <li>{point}</li>
+                ))}
+              </ul>
+            </article>
           ))}
+        </div>
+
+        <div class="engagement-note">
+          <h2>Engagement & pricing</h2>
+          <p>
+            Software and consulting work is usually billed on a
+            fixed-fee or time-and-materials basis under a written
+            agreement. For the games we publish, the revenue comes
+            from in-app purchases, paid downloads, and ads on those
+            titles, collected through the platforms and payment
+            processors we work with — not through this website.
+          </p>
+          <p>
+            We share specific pricing in a written proposal after
+            a short call.
+          </p>
+          <a href="/contact" class="btn">Request a proposal</a>
         </div>
       </div>
     </section>
@@ -66,19 +129,27 @@ const services = [
     padding: var(--spacing-xl) 0;
   }
 
+  .services-intro {
+    max-width: 760px;
+    margin: 0 auto var(--spacing-lg);
+    text-align: center;
+    font-size: 1.05rem;
+    line-height: 1.7;
+  }
+
   .services-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
     gap: var(--spacing-md);
-    max-width: 1000px;
+    max-width: 1100px;
     margin: 0 auto;
   }
 
   .service-card {
-    padding: var(--spacing-lg) var(--spacing-md);
+    padding: var(--spacing-md);
     border: 1px solid var(--color-lighter-gray);
-    text-align: center;
     transition: var(--transition);
+    background-color: var(--color-white);
   }
 
   .service-card:hover {
@@ -90,18 +161,72 @@ const services = [
     color: var(--color-black);
   }
 
-  .service-card p {
-    margin-bottom: 0;
+  .service-desc {
+    margin-bottom: var(--spacing-sm);
     color: var(--color-gray);
+    line-height: 1.6;
+  }
+
+  .service-points {
+    list-style: none;
+    padding: 0;
+  }
+
+  .service-points li {
+    position: relative;
+    padding-left: 1.25rem;
+    margin-bottom: 0.4rem;
+    color: var(--color-gray);
+    font-size: 0.95rem;
+  }
+
+  .service-points li::before {
+    content: '—';
+    position: absolute;
+    left: 0;
+    color: var(--color-light-gray);
+  }
+
+  .engagement-note {
+    max-width: 800px;
+    margin: var(--spacing-xl) auto 0;
+    padding-top: var(--spacing-lg);
+    border-top: 1px solid var(--color-off-white);
+    text-align: center;
+  }
+
+  .engagement-note h2 {
+    margin-bottom: var(--spacing-md);
+    color: var(--color-black);
+  }
+
+  .engagement-note p {
+    line-height: 1.7;
+    margin-bottom: var(--spacing-sm);
+  }
+
+  .btn {
+    display: inline-block;
+    margin-top: var(--spacing-sm);
+    padding: 0.875rem 1.75rem;
+    font-size: 0.85rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    border: 2px solid var(--color-black);
+    background-color: var(--color-black);
+    color: var(--color-white);
+    transition: var(--transition);
+  }
+
+  .btn:hover {
+    background-color: transparent;
+    color: var(--color-black);
   }
 
   @media (max-width: 768px) {
     .services-grid {
       grid-template-columns: 1fr;
-    }
-
-    .service-card {
-      padding: var(--spacing-md);
     }
   }
 </style>

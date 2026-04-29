@@ -3,12 +3,269 @@ import Layout from '../layouts/Layout.astro';
 import Header from '../components/Header.astro';
 import Hero from '../components/Hero.astro';
 import Footer from '../components/Footer.astro';
+
+const capabilities = [
+  {
+    title: 'Software Development',
+    description:
+      'Web, mobile, and backend builds for client companies.',
+  },
+  {
+    title: 'Game Development',
+    description:
+      'Original browser and mobile games we design, build, and ship ourselves.',
+  },
+  {
+    title: 'Game Operations',
+    description:
+      'Live ops for the games we publish: content updates, monetization, analytics, player support.',
+  },
+  {
+    title: 'Technical Consulting',
+    description:
+      'Short engagements — architecture review, tech selection, project scoping.',
+  },
+];
 ---
 
-<Layout title="Kanata Labs LLC">
+<Layout title="Kanata Labs LLC — Software & Games Studio">
   <Header />
   <main>
     <Hero />
+
+    <section class="capabilities">
+      <div class="container">
+        <h2 class="section-title">What we do</h2>
+        <p class="section-lead">
+          Two things we are paid for: software work for client
+          companies, and the games we run ourselves. A bit of
+          consulting on the side.
+        </p>
+        <div class="cap-grid">
+          {capabilities.map(cap => (
+            <div class="cap-card">
+              <h3>{cap.title}</h3>
+              <p>{cap.description}</p>
+            </div>
+          ))}
+        </div>
+        <div class="cap-cta">
+          <a href="/services" class="btn btn-secondary">See all services</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="company-snapshot">
+      <div class="container">
+        <div class="snapshot-grid">
+          <div class="snapshot-text">
+            <h2>An independent studio</h2>
+            <p>
+              Small team. The senior people are the ones doing the
+              work. The software side is paid client work; the games
+              side is what we develop and run ourselves. We pick a few
+              things to work on rather than a queue of many, and we
+              tend to stay with what we ship.
+            </p>
+            <a href="/about" class="link-arrow">More about us &rarr;</a>
+          </div>
+          <div class="snapshot-stats">
+            <div class="stat">
+              <div class="stat-label">Headquartered</div>
+              <div class="stat-value">United States</div>
+            </div>
+            <div class="stat">
+              <div class="stat-label">Entity</div>
+              <div class="stat-value">Kanata Labs LLC</div>
+            </div>
+            <div class="stat">
+              <div class="stat-label">Practice areas</div>
+              <div class="stat-value">Software · Games</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="contact-cta">
+      <div class="container">
+        <h2>Have a project in mind?</h2>
+        <p>
+          Tell us about your software project, your game, or the live
+          title you would like help running.
+        </p>
+        <a href="/contact" class="btn btn-primary">Get in touch</a>
+      </div>
+    </section>
   </main>
   <Footer />
 </Layout>
+
+<style>
+  .capabilities {
+    padding: var(--spacing-xl) 0;
+    background-color: var(--color-off-white);
+  }
+
+  .section-title {
+    text-align: center;
+    margin-bottom: var(--spacing-sm);
+  }
+
+  .section-lead {
+    text-align: center;
+    max-width: 680px;
+    margin: 0 auto var(--spacing-lg);
+    font-size: 1.05rem;
+    color: var(--color-gray);
+  }
+
+  .cap-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: var(--spacing-md);
+    max-width: 1100px;
+    margin: 0 auto;
+  }
+
+  .cap-card {
+    padding: var(--spacing-md);
+    background-color: var(--color-white);
+    border: 1px solid var(--color-lighter-gray);
+    transition: var(--transition);
+  }
+
+  .cap-card:hover {
+    border-color: var(--color-black);
+  }
+
+  .cap-card h3 {
+    margin-bottom: var(--spacing-xs);
+    font-size: 1.1rem;
+    color: var(--color-black);
+  }
+
+  .cap-card p {
+    margin: 0;
+    font-size: 0.95rem;
+    line-height: 1.6;
+  }
+
+  .cap-cta {
+    text-align: center;
+    margin-top: var(--spacing-lg);
+  }
+
+  .company-snapshot {
+    padding: var(--spacing-xl) 0;
+    background-color: var(--color-white);
+  }
+
+  .snapshot-grid {
+    display: grid;
+    grid-template-columns: 1.4fr 1fr;
+    gap: var(--spacing-lg);
+    max-width: 1000px;
+    margin: 0 auto;
+    align-items: center;
+  }
+
+  .snapshot-text h2 {
+    margin-bottom: var(--spacing-md);
+  }
+
+  .snapshot-text p {
+    line-height: 1.7;
+    margin-bottom: var(--spacing-md);
+  }
+
+  .link-arrow {
+    color: var(--color-black);
+    font-weight: 600;
+    border-bottom: 2px solid var(--color-black);
+    padding-bottom: 2px;
+  }
+
+  .link-arrow:hover {
+    color: var(--color-gray);
+    border-bottom-color: var(--color-gray);
+  }
+
+  .snapshot-stats {
+    display: grid;
+    gap: var(--spacing-md);
+    padding: var(--spacing-md);
+    background-color: var(--color-off-white);
+  }
+
+  .stat-label {
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: var(--color-light-gray);
+    margin-bottom: 0.25rem;
+  }
+
+  .stat-value {
+    font-size: 1.05rem;
+    font-weight: 600;
+    color: var(--color-black);
+  }
+
+  .contact-cta {
+    padding: var(--spacing-xl) 0;
+    background-color: var(--color-black);
+    color: var(--color-white);
+    text-align: center;
+  }
+
+  .contact-cta h2 {
+    color: var(--color-white);
+    margin-bottom: var(--spacing-sm);
+  }
+
+  .contact-cta p {
+    color: var(--color-lighter-gray);
+    max-width: 560px;
+    margin: 0 auto var(--spacing-md);
+  }
+
+  .btn {
+    display: inline-block;
+    padding: 0.875rem 1.75rem;
+    font-size: 0.85rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    border: 2px solid var(--color-black);
+    transition: var(--transition);
+    cursor: pointer;
+  }
+
+  .btn-primary {
+    background-color: var(--color-white);
+    color: var(--color-black);
+    border-color: var(--color-white);
+  }
+
+  .btn-primary:hover {
+    background-color: transparent;
+    color: var(--color-white);
+  }
+
+  .btn-secondary {
+    background-color: transparent;
+    color: var(--color-black);
+  }
+
+  .btn-secondary:hover {
+    background-color: var(--color-black);
+    color: var(--color-white);
+  }
+
+  @media (max-width: 768px) {
+    .snapshot-grid {
+      grid-template-columns: 1fr;
+    }
+  }
+</style>
